@@ -1,2 +1,2 @@
-export { default as TextContext } from './TextContext'
-export { default as TextProvider } from './TextProvider'
+export { default as TextContext } from './text.context'
+export { default as TextProvider } from './text.provider'
