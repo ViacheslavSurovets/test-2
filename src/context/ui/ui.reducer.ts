@@ -14,7 +14,6 @@ export default (state: any, action: any) => {
         showHeaderMenu: false
       }
     case UiActionTypes.TOGGLE_HEADER_MENU:
-      console.log(action.type, state)
       return {
         ...state,
         showHeaderMenu: !state.showHeaderMenu

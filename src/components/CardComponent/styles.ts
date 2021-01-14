@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/macro'
-//eslint-disable-next-line
+
 const styleBoxShadowAndScaleOnHover = css`
   transform: scale(1.03);
   transition: all 1s ease;

@@ -63,3 +63,68 @@ export const DetailsContainer = styled.section`
   width: 100%;
   height: 50rem;
 `
+
+
+export const commonStyleTitleText = css`
+  ${ commonFontColor };
+  font-size: 2.5rem;
+`
+
+export const commonStyleText = css`
+  ${ commonFontColor };
+  ${ commonFontSize };
+`
+
+export const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  min-height: 8rem;
+  width: 100%;
+  position: relative;
+`
+
+export const commonContentWrapper = css`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  min-height: 70vh;
+`
+
+export const Paragraph = styled.p`
+  ${ commonStyleTextTwoRem };
+  text-indent: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`
+
+export const styleBoxShadowAndScaleOnHover = css`
+  transform: scale(1.03);
+  transition: all 1s ease;
+  box-shadow: 4px 4px 4px -3px ${ ({ theme }) => theme.black };
+`
+
+
+export const TitleMd = styled.h2`
+  ${ commonStyleTextThreeRem };
+  user-select: none;
+`
+
+export const PageTitle = styled.h2`
+  font-size: 3rem;
+`
+
+export const CloseIconWrapper = styled.figure`
+  position: absolute;
+  right: 3%;
+  top: 3%;
+  cursor: pointer;
+`
+
+export const IconWrapper = styled.div`
+  ${ flexCommon };
+  cursor: pointer;
+`

@@ -23,7 +23,8 @@ const IconsContainer: FC = (props) => {
       textExplain: txt && txt.pages.statements.iconTextExplain.dueDate,
       info: 'January 10th'
     }
-  ],[txt])
+    //eslint-disable-next-line
+  ],[])
 
   return (
     <StatementsIconContainer>

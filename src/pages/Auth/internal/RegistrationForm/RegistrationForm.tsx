@@ -92,7 +92,7 @@ const RegistrationForm: FC = () => {
       }
     ]
     //eslint-disable-next-line
-  }, [firstName, email, lastName, password, confirmPassword])
+  }, [])
 
   return (
     <>

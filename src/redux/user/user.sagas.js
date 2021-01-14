@@ -53,7 +53,6 @@ function* onEmailSignInStart() {
 
 function* isUserAuthenticated() {
     try {
-        console.log('wwwwwww')
         const userAuth = yield getCurrentUser()
         if ( !userAuth ) return
         yield  getSnapshotFromUserAuth( userAuth )

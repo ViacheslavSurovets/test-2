@@ -1,54 +1,35 @@
-import { FC, BaseSyntheticEvent, useContext } from 'react'
+import { FC, useContext } from 'react'
 
 import {
   HeaderContentWrapper,
   HeaderContainer,
-  UserContextMenu,
-  UserContextMenuItem,
-  Text,
-  Wrapper,
   NameText,
   HeaderTitle,
   HeaderTitleContainer
 } from './styles'
 import { useHistory } from 'react-router-dom'
 import { TextContext } from '../../context/text'
-import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import { shallowEqual, useSelector } from 'react-redux'
 import { selectCurrentUser } from '../../redux/user/user.selectors'
-import { ImageContainer } from '../../components'
-import { signOutStart } from '../../redux/user/user.actions'
-import { UiContext } from '../../context'
+import { HeaderCircle } from './internal'
 
 
 const Header: FC = () => {
-  const { displayName, photoURL, firstName } = useSelector(selectCurrentUser, shallowEqual)
+  const { displayName, firstName } = useSelector(selectCurrentUser, shallowEqual)
   const { txt } = useContext(TextContext)
-  const { leftMenuToggle, showHeaderMenu, toggleHeaderMenu } = useContext(UiContext)
-  const dispatch = useDispatch()
-
-  const history = useHistory();
-
-
-  const handleRightClick = (event: BaseSyntheticEvent) => {
-    event.preventDefault()
-    return toggleHeaderMenu && toggleHeaderMenu()
-  }
-
-  const handleClick = () => {
-    dispatch(signOutStart())
-  }
+  const history = useHistory()
 
   const titlePicker = () => {
-    const { location:{pathname} } = history;
-    if(pathname.includes('dashboard')) {
+    const { location: { pathname } } = history
+    if (pathname.includes('dashboard')) {
       return txt && txt.pages.dashboard.header
     }
-    if(pathname.includes('payments')){
+    if (pathname.includes('payments')) {
       const regex = new RegExp(/\d{1,3}$/)
       let test = regex.test(pathname)
       return test ? txt!.pages.payments.paymentsDetailsHeader : txt!.pages.payments.header
     }
-    if(pathname.includes('statements')){
+    if (pathname.includes('statements')) {
       return txt && txt.pages.statements.header
     }
 
@@ -58,29 +39,11 @@ const Header: FC = () => {
   return (
     <HeaderContainer>
       <HeaderContentWrapper>
-        <Wrapper>
-          <ImageContainer
-            shape='circle'
-            imageUrl={ photoURL }
-            height={ 5 }
-            width={ 5 }
-            onContextMenu={ handleRightClick }
-            onClick={ leftMenuToggle }
-          />
-
-          <UserContextMenu visible={ !showHeaderMenu }>
-            <UserContextMenuItem onClick={ handleClick }>
-              <Text>{ txt && txt.header.logout }</Text>
-            </UserContextMenuItem>
-          </UserContextMenu>
-        </Wrapper>
-
+        <HeaderCircle/>
         <NameText>{ displayName ? displayName : firstName }</NameText>
-
         <HeaderTitleContainer>
-          <HeaderTitle>{titlePicker()}</HeaderTitle>
+          <HeaderTitle>{ titlePicker() }</HeaderTitle>
         </HeaderTitleContainer>
-
       </HeaderContentWrapper>
     </HeaderContainer>
   )

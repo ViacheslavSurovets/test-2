@@ -17,7 +17,7 @@ const PaymentDetails: FC = () => {
   useEffect(()=>{
     dispatch(currentItemToStore(itemData))
     //eslint-disable-next-line
-  },[itemData])
+  },[])
 
   const { id, body, title } = itemData
   const DATA = useMemo(() => ([
@@ -66,7 +66,7 @@ const PaymentDetails: FC = () => {
         }]
     }
     //eslint-disable-next-line
-  ]), [body])
+  ]), [])
 
   return (
     <DetailsContainer>

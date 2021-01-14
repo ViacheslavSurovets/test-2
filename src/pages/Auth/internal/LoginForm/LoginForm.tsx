@@ -45,7 +45,6 @@ const LoginForm: FC<LoginForm> = (props) => {
     setUserCredentials({ ...userCredentials, [name]: value })
   }
 
-
   return (
     <>
       <LoginContainerTitle>{ txt && txt.pages.auth.titleLogin }</LoginContainerTitle>
