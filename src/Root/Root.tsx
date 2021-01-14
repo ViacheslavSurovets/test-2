@@ -1,22 +1,24 @@
-import { Suspense, FC } from 'react'
+import { Suspense, FC, useContext } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import { Spinner, PrivateRoute } from '../components'
 import { Layout } from './styles'
 import { lazy } from '../utils/lazy'
 import { NotFound } from '../pages'
-// import { UiContext } from '../context'
+import { UiContext } from '../context'
 
 const Root: FC = () => {
-  // const { closeHeaderMenu } = useContext(UiContext)
+  const { closeHeaderMenu, showHeaderMenu } = useContext(UiContext)
 
-  // const handleClick = () => {
-  //   return closeHeaderMenu && closeHeaderMenu()
-  // }
+  const handleClick = () => {
+    if(showHeaderMenu){
+      return closeHeaderMenu && closeHeaderMenu()
+    }
+   return
+  }
 
   return (
-    // <Layout onClick={handleClick}>
-    <Layout>
+    <Layout onClick={handleClick}>
       <Suspense fallback={ <Spinner size={ 10 } top={ 50 } fullSize/> }>
         <Switch>
           <Route exact path='/'>
