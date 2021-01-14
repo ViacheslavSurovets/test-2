@@ -1,0 +1,92 @@
+{
+  "mainStat": [
+    {
+      "Current Spend": "$1.000",
+      "Advance Payments": "(100)",
+      "Past Credits": "(0.00)",
+      "Other Credits": "(0.00)"
+    }
+  ],
+  "statements": [
+    {
+      "row": {
+        "period": "December 2020",
+        "balance": "MX 50.000",
+        "remaining": "MX 50.000",
+        "status": "Dew Now",
+        "paidOn": ""
+      },
+      "data": [{
+        "Total Spent": "MX 50.000",
+        "In MXN": "MX 50.000",
+        "In USD": "MX 50.000",
+        "Past Credits": "(0.00)",
+        "Other Credits": "(0.00)"
+      }]
+    },
+    {
+      "row": {
+        "period": "November 2020",
+        "balance": "MX 50.000",
+        "remaining": "MX 50.000",
+        "status": "Paid",
+        "paidOn": ""
+      },
+      "data": [{
+        "Total Spent": "MX 50.000",
+        "In MXN": "MX 50.000",
+        "In USD": "MX 50.000",
+        "Past Credits": "(0.00)",
+        "Other Credits": "(0.00)"
+      }]
+    },
+    {
+      "row": {
+        "period": "October 2020",
+        "balance": "MX 50.000",
+        "remaining": "MX 50.000",
+        "status": "Dew Now",
+        "paidOn": ""
+      },
+      "data": [{
+        "Total Spent": "MX 50.000",
+        "In MXN": "MX 50.000",
+        "In USD": "MX 50.000",
+        "Past Credits": "(0.00)",
+        "Other Credits": "(0.00)"
+      }]
+    },
+    {
+      "row": {
+        "period": "September 2020",
+        "balance": "MX 50.000",
+        "remaining": "MX 50.000",
+        "status": "Paid",
+        "paidOn": ""
+      },
+      "data": [{
+        "Total Spent": "MX 50.000",
+        "In MXN": "MX 50.000",
+        "In USD": "MX 50.000",
+        "Past Credits": "(0.00)",
+        "Other Credits": "(0.00)"
+      }]
+    },
+    {
+      "row": {
+        "period": "August 2020",
+        "balance": "MX 50.000",
+        "remaining": "MX 50.000",
+        "status": "Dew Now",
+        "paidOn": ""
+      },
+      "data": [{
+        "Total Spent": "MX 50.000",
+        "In MXN": "MX 50.000",
+        "In USD": "MX 50.000",
+        "Past Credits": "(0.00)",
+        "Other Credits": "(0.00)"
+      }]
+    }
+  ]
+}

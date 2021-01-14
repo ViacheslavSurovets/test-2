@@ -6,11 +6,15 @@
       "dom.iterable",
       "esnext"
     ],
+    "typeRoots": [
+      "../@types"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
@@ -21,6 +25,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-  ]
+    "src", "@types"
+  ],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }

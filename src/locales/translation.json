@@ -1,0 +1,71 @@
+{
+  "leftMenu": {
+    "label": {
+      "payments": "Payments",
+      "statements": "Statements",
+      "dashboard": "Dashboard"
+    }
+  },
+  "header":{
+    "logout": "Logout"
+  },
+  "pages": {
+    "auth": {
+      "titleLogin": "Login",
+      "titleRegister": "Register",
+      "email": "Email",
+      "password": "Password",
+      "loginButton": "Login",
+      "registerButton": "Register",
+      "loginQuestion": "New Customer?",
+      "loginLink": "Register",
+      "registerLink": "Login",
+      "googleButton": "GOOGLE",
+      "checkPasswords": "Please check the password",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "confirmPassword": "Confirm Password",
+      "registerQuestion": "Already have an account?"
+    },
+    "dashboard": {
+      "header": "Dashboard",
+      "title": "Dashboard"
+    },
+    "statements": {
+      "header": "Statements",
+      "title": "Current Statements",
+      "iconTextExplain": {
+        "statementBalance": "statementBalance",
+        "billingPeriod": "Billing Period",
+        "dueDate": "Due Data"
+      },
+      "mainState": {
+        "hideDetails": "Hide Details"
+      },
+      "statementsDetails": {
+        "title": "Statements"
+      },
+      "statementItem": {
+        "period": "Statement Period",
+        "balance": "Statement Balance",
+        "remaining": "Remaining",
+        "status": "Status",
+        "paidOn": "Paid On"
+      }
+    },
+    "payments": {
+      "header": "Payments",
+      "title": "Payments",
+      "cardContainer": {
+        "button": "Next",
+        "buttonBack": "Back",
+        "pay": "Pay",
+        "done": "Done"
+      },
+      "amount": {
+        "amount": "Amount"
+      },
+      "paymentsDetailsHeader": "Payments Details"
+    }
+  }
+}

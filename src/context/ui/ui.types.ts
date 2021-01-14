@@ -1,0 +1,7 @@
+const UiActionTypes = {
+  LEFT_MENU_TOGGLE: 'LEFT_MENU_TOGGLE',
+  CLOSE_HEADER_MENU: 'CLOSE_HEADER_MENU',
+  TOGGLE_HEADER_MENU: 'TOGGLE_HEADER_MENU'
+}
+
+export default UiActionTypes
