@@ -11,10 +11,11 @@ interface ButtonContainerProps {
   width?: string;
   marginTop?: string;
   label?: boolean;
+  type?: any
 }
 
 
-const ButtonContainer: FC<ButtonContainerProps> = ({ path, width, label, ...rest }) => {
+const ButtonContainer: FC<ButtonContainerProps> = ({ path, type, width, label, ...rest }) => {
   const history = useHistory()
   const { txt } = useContext(TextContext)
   const [isHiddenSpinner, setIsHiddenSpinner] = useState(false)
@@ -26,7 +27,7 @@ const ButtonContainer: FC<ButtonContainerProps> = ({ path, width, label, ...rest
 
   return (
     <Container>
-      <CustomButton { ...rest } spinner={isHiddenSpinner} onClick={ handleClick }
+      <CustomButton type={type} { ...rest } spinner={isHiddenSpinner} onClick={ handleClick }
                     width={ width }>{ label ? txt!.pages.payments.cardContainer.pay : txt!.pages.payments.cardContainer.button }</CustomButton>
       <CustomButton { ...rest } onClick={ () => history.goBack() } whiteBlue marginTop={ '2rem' }
                     width={ width }>{ txt && txt.pages.payments.cardContainer.buttonBack }</CustomButton>

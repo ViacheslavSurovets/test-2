@@ -17,7 +17,7 @@ const PaymentsAmount: FC = (props) => {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault()
     setCount({ amount: '' })
-    history.push('/payments/confirm')
+    setTimeout(() => history.push('/payments/confirm'),1000)
   }
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -39,7 +39,7 @@ const PaymentsAmount: FC = (props) => {
           required
           big
         />
-        <ButtonContainer width={'25rem'}/>
+        <ButtonContainer type={'submit'} width={'25rem'}/>
       </CustomForm>
     </DetailsContainer>
   )

@@ -1,7 +1,6 @@
 import { FC, useContext } from 'react'
 
-import { UserInfoContainer } from './styles'
-import { CustomText } from '../../components/CustomText'
+import './styles.scss'
 import { BaseLayout } from '../../layout/BaseLayout'
 import { useSelector } from 'react-redux'
 import { selectCurrentUser } from '../../redux/user/user.selectors'
@@ -14,11 +13,11 @@ const Dashboard: FC = (props: any) => {
 
   return (
     <BaseLayout>
-      <UserInfoContainer>
-        <CustomText fontSize={ '3rem' } fontWeight='bold' >
+      <div className="dashboard-container">
+        <span className="dashboard-container__info" >
           { txt && txt.pages.dashboard.userInfo.fullName }:
-          { firstName ? firstName + ' ' + lastName : displayName  }</CustomText>
-      </UserInfoContainer>
+          { firstName ? firstName + ' ' + lastName : displayName  }</span>
+      </div>
     </BaseLayout>
   )
 }
