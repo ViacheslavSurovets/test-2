@@ -22,6 +22,7 @@ export default createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
 
   html {
@@ -37,10 +38,6 @@ export default createGlobalStyle`
   body, html {
     height: 100%;
     max-height: 100%;
-  }
-
-  * {
-    box-sizing: border-box;
   }
 
   *::selection {

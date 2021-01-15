@@ -27,11 +27,11 @@ const Payments: FC<PaymentsProps> = ({ match }) => {
       <PaymentsContent>
         <h1>{ txt && txt.pages.payments.title }</h1>
         <Switch>
-          <Route path={ `/payments/amount` } component={ PaymentsAmount }/>
-          <Route path={ `/payments/confirm` } component={ PaymentConfirm }/>
-          <Route path={ `/payments/success` } component={ PaymentSuccess }/>
+          <Route exact  path={ `/payments/amount` } component={ PaymentsAmount }/>
+          <Route exact path={ `/payments/confirm` } component={ PaymentConfirm }/>
+          <Route exact path={ `/payments/success` } component={ PaymentSuccess }/>
           <Route exact path={ `${ match.path }/:id` } component={ PaymentDetails }/>
-          <Route path={ `${ match.path }` } component={ CardContainer }/>
+          <Route exact path={ `${ match.path }` } component={ CardContainer }/>
         </Switch>
       </PaymentsContent>
     </BaseLayout>
