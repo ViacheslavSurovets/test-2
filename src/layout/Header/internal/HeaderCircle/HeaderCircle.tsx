@@ -9,19 +9,26 @@ import { selectCurrentUser } from '../../../../redux/user/user.selectors'
 
 const HeaderCircle: FC = (props) => {
   const { photoURL } = useSelector(selectCurrentUser, shallowEqual)
-  const { leftMenuToggle, showHeaderMenu, toggleHeaderMenu } = useContext(UiContext)
+  const { showHeaderMenu, toggleHeaderMenu } = useContext(UiContext)
+  const { lastName, firstName, displayName } = useSelector(selectCurrentUser)
   const dispatch = useDispatch()
   const { txt } = useContext(TextContext)
 
-  const handleRightClick = (event: BaseSyntheticEvent) => {
+  const handleClick = (event: BaseSyntheticEvent) => {
     event.preventDefault()
     return toggleHeaderMenu && toggleHeaderMenu()
   }
 
-  const handleClick = () => {
+  const onSignOut = () => {
     dispatch(signOutStart())
   }
 
+  const getInitials = () => {
+    if (lastName && firstName) {
+      return `${ firstName[0] }${ lastName[0] }`.toUpperCase()
+    }
+    return
+  }
 
   return (
     <Wrapper>
@@ -30,12 +37,11 @@ const HeaderCircle: FC = (props) => {
         imageUrl={ photoURL }
         height={ 5 }
         width={ 5 }
-        onContextMenu={ handleRightClick }
-        onClick={ leftMenuToggle }
-      />
+        onClick={ handleClick }
+      >{ getInitials() }</ImageContainer>
 
       <UserContextMenu visible={ !showHeaderMenu }>
-        <UserContextMenuItem onClick={ handleClick }>
+        <UserContextMenuItem onClick={ onSignOut }>
           <Text>{ txt && txt.header.logout }</Text>
         </UserContextMenuItem>
       </UserContextMenu>

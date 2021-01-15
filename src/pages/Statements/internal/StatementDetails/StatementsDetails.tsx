@@ -12,7 +12,7 @@ const StatementsDetails: FC = (props) => {
   return (
     <Aside>
       <Title>{ txt && txt.pages.statements.statementsDetails.title }</Title>
-      <Line>
+      <Line scrollable>
         <CustomText width={ '17rem' }>{ txt && txt.pages.statements.statementItem.period } </CustomText>
         <CustomText width={ '17rem' }>{ txt && txt.pages.statements.statementItem.balance } </CustomText>
         <CustomText width={ '17rem' }>{ txt && txt.pages.statements.statementItem.remaining } </CustomText>

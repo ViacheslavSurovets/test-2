@@ -33,12 +33,12 @@ export const Container = styled.nav<LeftMenuProps>`
   display: flex;
   flex-direction: column;
   box-shadow: 0.5px 0 5px rgba(0, 0, 0, .5);
-  width: 20rem;
-  position: absolute;
-  height: 100%;
-  z-index: 1;
-  top: 0;
-  left: 0;
+  min-width: 20rem;
+  //position: ;
+  min-height: 100%;
+  //z-index: 1;
+  //top: 0;
+  //left: 0;
   background-color: ${({theme}) => theme.white};
   ${setVisibility};
 `

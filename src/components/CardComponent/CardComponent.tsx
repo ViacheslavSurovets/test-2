@@ -33,11 +33,8 @@ const CardComponent: FC<CardComponentProps> = ({ item }) => {
       <CardContainer onClick={ () => toItem(item.id) }>
         <CustomText>{ item.title }</CustomText>
         <CustomText>$9.99</CustomText>
-        <CustomButton block onClick={ () => toItem(item.id) }>
-          <ButtonSpinner>
+        <CustomButton spinner={isHiddenSpinner} block onClick={ () => toItem(item.id) }>
             { txt && txt.pages.payments.cardContainer.button }
-            <Spinner isHidden={ isHiddenSpinner } size={ 3 } bottom={ 8 } left={ 10 } position='absolute'/>
-          </ButtonSpinner>
         </CustomButton>
       </CardContainer>
     </>

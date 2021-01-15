@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components/macro'
+import { flexCommon } from '../../styles/commonStylesAndStyledComponents'
 
 const styleBoxShadowAndScaleOnHover = css`
   transform: scale(1.03);
@@ -27,6 +28,9 @@ export const CardContainer = styled.div`
 `
 
 export const ButtonSpinner = styled.div`
-  display: flex;
+  ${ flexCommon };
   justify-content: space-around;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 `

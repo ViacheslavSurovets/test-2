@@ -33,7 +33,12 @@ type ContextProps = {
       },
       "dashboard": {
         "header": string,
-        "title": string
+        "title": string,
+          "userInfo": {
+            "firstName": string,
+            "lastName": string,
+            "fullName": string
+          }
       },
       "statements": {
         "header": string,

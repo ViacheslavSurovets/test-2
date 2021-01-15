@@ -6,7 +6,7 @@ import { CustomLink, Container, LeftMenuItemWrapper } from './styles'
 
 const LeftMenu: FC = () => {
   const { txt } = useContext(TextContext)
-  const { showLeftMenu, leftMenuToggle } = useContext(UiContext)
+  const { leftMenuToggle } = useContext(UiContext)
 
   const config = useMemo(() => {
     const { dashboard, payments, statements } = txt!.leftMenu.label
@@ -31,7 +31,7 @@ const LeftMenu: FC = () => {
   }, [])
 
   return (
-    <Container visible={showLeftMenu}>
+    <Container visible={true}>
       <LeftMenuItemWrapper >
         { config.map(item =>
           <CustomLink exact to={ item.path } activeClassName='selected' onClick={leftMenuToggle} key={ item.path }>

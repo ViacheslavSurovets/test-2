@@ -7,6 +7,7 @@ import {
   HeaderTitle,
   HeaderTitleContainer
 } from './styles'
+import { Logo } from './internal'
 import { useHistory } from 'react-router-dom'
 import { TextContext } from '../../context/text'
 import { shallowEqual, useSelector } from 'react-redux'
@@ -39,6 +40,7 @@ const Header: FC = () => {
   return (
     <HeaderContainer>
       <HeaderContentWrapper>
+        <Logo />
         <HeaderCircle/>
         <NameText>{ displayName ? displayName : firstName }</NameText>
         <HeaderTitleContainer>

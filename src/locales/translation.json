@@ -10,6 +10,13 @@
     "logout": "Logout"
   },
   "pages": {
+    "dashboard": {
+      "userInfo": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "fullName": "User Name"
+      }
+    },
     "auth": {
       "titleLogin": "Login",
       "titleRegister": "Register",
@@ -26,10 +33,6 @@
       "lastName": "Last Name",
       "confirmPassword": "Confirm Password",
       "registerQuestion": "Already have an account?"
-    },
-    "dashboard": {
-      "header": "Dashboard",
-      "title": "Dashboard"
     },
     "statements": {
       "header": "Statements",

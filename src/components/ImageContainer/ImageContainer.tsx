@@ -12,8 +12,8 @@ export interface ImageContainerProps {
   children?: ReactNode;
 }
 
-const ImageContainer: FC<ImageContainerProps> = ({ imageUrl, width, height, ...rest }) => (
-  <Image background={ imageUrl } width={ width } height={ height }  { ...rest } />
+const ImageContainer: FC<ImageContainerProps> = ({ imageUrl, children, width, height, ...rest }) => (
+  <Image background={ imageUrl } width={ width } height={ height }  { ...rest }>{children}</Image>
 )
 
 export default ImageContainer

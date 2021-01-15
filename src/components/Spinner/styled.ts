@@ -32,7 +32,7 @@ const textAnimation = keyframes`
 
 export const Spinner = styled.div<SpinnerProps>`
   display: inline-block;
-  position: fixed;
+  position: absolute;
   position: ${ props => props.position };
   width: ${ props => props.size }rem;
   height: ${ props => props.size }rem;

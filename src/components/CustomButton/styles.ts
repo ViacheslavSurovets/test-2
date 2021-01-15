@@ -118,4 +118,5 @@ export const Button = styled.button`
   height: ${ props => props.height };
   cursor: pointer;
   user-select: none;
+  position: relative;
 `

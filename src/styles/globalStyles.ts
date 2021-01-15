@@ -2,23 +2,6 @@ import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
 
-  @font-face {
-    font-family: 'Comic Sans MS';
-    src: url('./fonts/comic-sans-ms/comic.eot');
-    src: local('☺'), url('./fonts/comic-sans-ms/comic.woff') format('woff'), url('./fonts/comic-sans-ms/comic.ttf') format('truetype'), url('./fonts/comic-sans-ms/comic.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  //@font-face {
-  //  font-family: 'Comic Sans MS';
-  //  src: url('./fonts/comic-sans-ms/comicbd.eot');
-  //  src: local('☺'), url('./fonts/comic-sans-ms/comicbd.woff') format('woff'), url('./fonts/comic-sans-ms/comicbd.ttf') format('truetype'), url('./fonts/comic-sans-ms/comicbd.svg') format('svg');
-  //  font-weight: 500;
-  //  font-style: normal;
-  //}
-
-
   * {
     margin: 0;
     padding: 0;
@@ -27,7 +10,7 @@ export default createGlobalStyle`
 
   html {
     font-size: 62.5%;
-    font-family: 'Comic Sans MS','Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
 
   body {
@@ -60,11 +43,11 @@ export default createGlobalStyle`
     width: 10px;
     height: 10px;
   }
-  
+
   ::-webkit-scrollbar-track-piece {
     background-color: #ffffff;
   }
-  
+
   ::-webkit-scrollbar-thumb {
     height: 50px;
     background-color: ${ ({ theme }) => theme.gray };

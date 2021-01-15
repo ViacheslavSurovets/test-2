@@ -1,6 +1,7 @@
 import styled, { keyframes, css } from 'styled-components/macro'
 //eslint-disable-next-line
 import { ImageContainerProps } from './ImageContainer'
+import { flexCommon } from '../../styles/commonStylesAndStyledComponents'
 
 const linkKeyframe = keyframes`
 
@@ -18,6 +19,7 @@ const linkKeyframe = keyframes`
 
 const circle = css`
   border-radius: 50%;
+  background-color: aqua;
 `
 
 const setShape = (props: ImageContainerProps) => {
@@ -27,7 +29,13 @@ const setShape = (props: ImageContainerProps) => {
   return
 }
 
+
+
 export const Image = styled.div<ImageContainerProps>`
+  ${flexCommon};
+  color: ${({theme}) => theme.ghostWhite};
+  font-size: 3rem;
+  user-select: none;
   width: ${ props => props.width }rem;
   height: ${ props => props.height }rem;
   text-decoration: none;
@@ -36,11 +44,10 @@ export const Image = styled.div<ImageContainerProps>`
   background-image: url(${ props => props.background });
   cursor: pointer;
   transition: all .5s;
-  background-color: aqua;
   ${ setShape };
 
   &:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
     transition: all .5s;
   }
 
