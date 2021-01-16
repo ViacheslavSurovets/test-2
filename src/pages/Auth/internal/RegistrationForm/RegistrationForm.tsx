@@ -40,13 +40,13 @@ const RegistrationForm: FC = () => {
 
     await dispatch( signUpStart({ firstName, lastName, email, password }))
 
-    setUserCredentials({
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      confirmPassword: ''
-    })
+    // setUserCredentials({
+    //   firstName: '',
+    //   lastName: '',
+    //   email: '',
+    //   password: '',
+    //   confirmPassword: ''
+    // })
   }
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

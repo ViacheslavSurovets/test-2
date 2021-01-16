@@ -1,16 +1,18 @@
 import React, { useReducer } from 'react'
-import AlertReducer from './ui.reducer'
-import UiContext from './ui.context'
 
+import UiReducer from './ui.reducer'
+import UiContext from './ui.context'
 import UiActionTypes from './ui.types'
+
 
 const UiState = (props: any) => {
   const initialState = {
     showLeftMenu: false,
-    showHeaderMenu: false
+    showHeaderMenu: false,
+    showCustomPopUp: false
   }
 
-  const [state, dispatch] = useReducer(AlertReducer, initialState)
+  const [state, dispatch] = useReducer(UiReducer, initialState)
 
 
   const leftMenuToggle = () => dispatch({
@@ -25,6 +27,15 @@ const UiState = (props: any) => {
     type: UiActionTypes.TOGGLE_HEADER_MENU
   })
 
+  const showCustomPopUpAction = () => dispatch({
+    type: UiActionTypes.SHOW_CUSTOM_POPUP
+  })
+
+  const closeCustomPopUpAction = () => dispatch({
+    type: UiActionTypes.CLOSE_CUSTOM_POPUP
+  })
+
+
 
   return (
     <UiContext.Provider
@@ -32,8 +43,11 @@ const UiState = (props: any) => {
         leftMenuToggle,
         toggleHeaderMenu,
         closeHeaderMenu,
+        showCustomPopUpAction,
+        closeCustomPopUpAction,
         showLeftMenu: state.showLeftMenu,
-        showHeaderMenu: state.showHeaderMenu
+        showHeaderMenu: state.showHeaderMenu,
+        showCustomPopUp: state.showCustomPopUp
       } }
     >
       { props.children }

@@ -24,11 +24,12 @@ export interface CustomButtonProps {
   spinnerPosition? : 'absolute' | 'fixed' | 'relative' | 'static' | 'inherit'
 }
 
+
 const CustomButton: FC<CustomButtonProps> = ({ children, spinner, spinnerPosition, ...rest }) => (
   <Button { ...rest }>
     { children }
     <ButtonSpinner>
-      <Spinner isHidden={ spinner } size={ 3 } left={ 10 } position={spinnerPosition} />
+      <Spinner showSpinner={ spinner } size={ 3 } left={ 10 } position={spinnerPosition} />
     </ButtonSpinner>
   </Button>
 )

@@ -1,1 +1,1 @@
-export { default } from './Statements'
+export { default as Statements } from './Statements'

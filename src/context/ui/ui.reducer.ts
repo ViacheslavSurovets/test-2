@@ -18,6 +18,17 @@ export default (state: any, action: any) => {
         ...state,
         showHeaderMenu: !state.showHeaderMenu
       }
+    case UiActionTypes.SHOW_CUSTOM_POPUP:
+      return {
+        ...state,
+        showCustomPopUp: true
+      }
+    case UiActionTypes.CLOSE_CUSTOM_POPUP:
+      return {
+        ...state,
+        showCustomPopUp: false
+      }
+
     default:
       return state
   }

@@ -34,10 +34,10 @@ const LoginForm: FC<LoginForm> = (props) => {
 
   const { email, password } = userCredentials
 
-  const handleSubmit = async (event: FormEvent) => {
+  const handleSubmit =  (event: FormEvent) => {
     event.preventDefault()
     dispatch(emailSingInStart({ email, password }))
-    setUserCredentials({ email: '', password: '' })
+    // setUserCredentials({ email: '', password: '' })
   }
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

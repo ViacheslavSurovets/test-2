@@ -1,10 +1,13 @@
 import { ChangeEvent, FC, FormEvent, useContext, useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 import { DetailsContainer } from '../../../../styles/commonStylesAndStyledComponents'
 import { ButtonContainer } from '../ButtonContainer'
 import { CustomInput, CustomForm } from '../../../../components'
 import { TextContext } from '../../../../context'
+import { setPaymentDetails } from '../../../../redux/payment/payment.actions'
+
 
 const PaymentsAmount: FC = (props) => {
   const [count, setCount] = useState({
@@ -12,12 +15,17 @@ const PaymentsAmount: FC = (props) => {
   })
   const history = useHistory()
   const { txt } = useContext(TextContext)
+  const dispatch = useDispatch()
+
   const { amount } = count
 
-  const handleSubmit = async (event: FormEvent) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
-    setCount({ amount: '' })
-    setTimeout(() => history.push('/payments/confirm'),1000)
+    dispatch(setPaymentDetails({ amount: amount }))
+    setTimeout(() => {
+      history.push('/payments/confirm')
+      setCount({ amount: '' })
+    }, 1000)
   }
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -39,7 +47,7 @@ const PaymentsAmount: FC = (props) => {
           required
           big
         />
-        <ButtonContainer type={'submit'} width={'25rem'}/>
+        <ButtonContainer type={ 'submit' } width={ '25rem' }/>
       </CustomForm>
     </DetailsContainer>
   )

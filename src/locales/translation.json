@@ -9,6 +9,10 @@
   "header":{
     "logout": "Logout"
   },
+  "customPopup": {
+    "logout": "Logout",
+    "close": "Close"
+  },
   "pages": {
     "dashboard": {
       "userInfo": {

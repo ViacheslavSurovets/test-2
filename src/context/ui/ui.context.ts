@@ -5,7 +5,10 @@ interface ContextProps {
   showLeftMenu: boolean,
   closeHeaderMenu: () => any,
   toggleHeaderMenu: () => any,
-  showHeaderMenu: boolean
+  showHeaderMenu: boolean,
+  showCustomPopUp: boolean,
+  showCustomPopUpAction:() => any,
+  closeCustomPopUpAction:() => any
 }
 
 const UiContext = createContext<Partial<ContextProps>>({})

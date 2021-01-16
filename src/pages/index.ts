@@ -1,1 +1,5 @@
 export { NotFound } from './NotFound'
+export { Statements } from './Statements'
+export { Dashboard } from './Dashboard'
+export { Payments } from './Payments'
+export { Auth } from './Auth'

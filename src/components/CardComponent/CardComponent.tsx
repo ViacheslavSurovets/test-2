@@ -1,8 +1,8 @@
 import { FC, useContext, useState } from 'react'
 
 import { useHistory } from 'react-router-dom'
-import { CustomButton, Spinner, CustomText } from '../../components'
-import { CardContainer, ButtonSpinner } from './styles'
+import { CustomButton, CustomText } from '../../components'
+import { CardContainer } from './styles'
 import { TextContext } from '../../context'
 
 type Item = {
@@ -13,8 +13,7 @@ type Item = {
 }
 
 interface CardComponentProps {
-  item: Item,
-
+  item: Item
 }
 
 const CardComponent: FC<CardComponentProps> = ({ item }) => {

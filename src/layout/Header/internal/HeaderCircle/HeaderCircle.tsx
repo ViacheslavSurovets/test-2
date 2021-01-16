@@ -1,7 +1,7 @@
 import { BaseSyntheticEvent, FC, useContext } from 'react'
 
 import { Text, UserContextMenu, UserContextMenuItem, Wrapper } from '../../styles'
-import { ImageContainer } from '../../../../components'
+import { ImageContainer, Portal, CustomPopup } from '../../../../components'
 import { signOutStart } from '../../../../redux/user/user.actions'
 import { TextContext, UiContext } from '../../../../context'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
@@ -9,14 +9,15 @@ import { selectCurrentUser } from '../../../../redux/user/user.selectors'
 
 const HeaderCircle: FC = (props) => {
   const { photoURL } = useSelector(selectCurrentUser, shallowEqual)
-  const { showHeaderMenu, toggleHeaderMenu } = useContext(UiContext)
-  const { lastName, firstName, displayName } = useSelector(selectCurrentUser)
+  const { showHeaderMenu, showCustomPopUp, showCustomPopUpAction } = useContext(UiContext)
+  const { lastName, firstName } = useSelector(selectCurrentUser)
   const dispatch = useDispatch()
   const { txt } = useContext(TextContext)
 
   const handleClick = (event: BaseSyntheticEvent) => {
     event.preventDefault()
-    return toggleHeaderMenu && toggleHeaderMenu()
+    showCustomPopUpAction && showCustomPopUpAction()
+    // return toggleHeaderMenu && toggleHeaderMenu()
   }
 
   const onSignOut = () => {
@@ -31,21 +32,25 @@ const HeaderCircle: FC = (props) => {
   }
 
   return (
-    <Wrapper>
-      <ImageContainer
-        shape='circle'
-        imageUrl={ photoURL }
-        height={ 5 }
-        width={ 5 }
-        onClick={ handleClick }
-      >{ getInitials() }</ImageContainer>
+    <>
+      { showCustomPopUp && <Portal component={ CustomPopup } nameOfClass={ 'js_custom-popup' }  /> }
+      <Wrapper>
+        <ImageContainer
+          shape='circle'
+          imageUrl={ photoURL }
+          height={ 5 }
+          width={ 5 }
+          onClick={ handleClick }
+        >{ getInitials() }</ImageContainer>
 
-      <UserContextMenu visible={ !showHeaderMenu }>
-        <UserContextMenuItem onClick={ onSignOut }>
-          <Text>{ txt && txt.header.logout }</Text>
-        </UserContextMenuItem>
-      </UserContextMenu>
-    </Wrapper>
+        <UserContextMenu visible={ !showHeaderMenu }>
+          <UserContextMenuItem onClick={ onSignOut }>
+            <Text>{ txt && txt.header.logout }</Text>
+          </UserContextMenuItem>
+        </UserContextMenu>
+      </Wrapper>
+    </>
+
   )
 }
 

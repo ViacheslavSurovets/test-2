@@ -19,3 +19,8 @@ export const selectCurrentItem = createSelector(
   [selectPaymentData],
   payment => payment.currentItem
 )
+
+export const selectPaymentDetails = createSelector(
+  [selectPaymentData],
+  data => data.paymentDetails
+)

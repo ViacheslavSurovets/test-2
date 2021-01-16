@@ -13,6 +13,10 @@ type ContextProps = {
     "header":{
       "logout": string
     };
+    "customPopup": {
+      "logout": string,
+      "close": string
+    },
     "pages": {
       "auth": {
         "titleLogin": string,

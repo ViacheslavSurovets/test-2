@@ -18,3 +18,8 @@ export const currentItemToStore = (data:any) => ({
   type: PaymentActionTypes.SET_CURRENT_ITEM,
   payload: data
 })
+
+export const setPaymentDetails = (value:object) => ({
+  type: PaymentActionTypes.SET_PAYMENT_DETAILS,
+  payload: value
+})

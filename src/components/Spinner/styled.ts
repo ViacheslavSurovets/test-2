@@ -32,15 +32,11 @@ const textAnimation = keyframes`
 
 export const Spinner = styled.div<SpinnerProps>`
   display: inline-block;
-  position: absolute;
+
   position: ${ props => props.position };
   width: ${ props => props.size }rem;
   height: ${ props => props.size }rem;
-  top: ${ props => props.top }%;
-  bottom: ${ props => props.bottom }%;
-  right: ${ props => props.right }%;
-  left: ${ props => props.left }%;
-  z-index: 15;
+
 
   div {
     box-sizing: border-box;
@@ -82,7 +78,7 @@ const getFullSize = (props: SpinnerProps) => {
 
 
 const setVisibility = (props: SpinnerProps) => {
-  if (!props.isHidden) {
+  if (!props.showSpinner) {
     return css`
       display: none;
     `
@@ -97,6 +93,12 @@ export const SuspenseComponentWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: ${ props => props.top }%;
+  bottom: ${ props => props.bottom }%;
+  right: ${ props => props.right }%;
+  left: ${ props => props.left }%;
+  z-index: 20;
   ${ setVisibility };
   ${ getFullSize };
 

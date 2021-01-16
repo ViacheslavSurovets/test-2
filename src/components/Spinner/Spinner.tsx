@@ -11,7 +11,7 @@ export interface SpinnerProps {
   text?: string;
   right?: numOrString;
   left?: numOrString;
-  isHidden?: boolean;
+  showSpinner?: boolean;
 }
 
 const SuspenseComponent: FC<SpinnerProps> = ({ ...rest }) => {

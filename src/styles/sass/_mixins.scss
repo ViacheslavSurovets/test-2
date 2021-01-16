@@ -1,0 +1,15 @@
+@import 'node_modules/tribal-color-styles/colors';
+
+@mixin flex-common{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin custom-text{
+  font-size: 3rem;
+  font-weight: bold;
+  color: map-get($text, 800);
+}
+
+

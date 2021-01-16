@@ -1,0 +1,58 @@
+@import "src/styles/sass/root";
+
+.custom-popup-container {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 30rem;
+  height: 10rem;
+  background: map-get($bg, 100);
+  box-shadow: 0 0 12px 1px map-get($bg, 500);
+
+  .custom-popup-container_padding {
+    padding: 1rem;
+    width: 100%;
+    height: 10rem;
+
+    .custom-popup-container__button-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      height: 100%;
+
+
+      .custom-popup__button {
+        cursor: pointer;
+        user-select: none;
+        outline: none;
+        height: 5rem;
+        font-size: 1.6rem;
+        width: 10rem;
+        border: 1px solid transparent;
+
+        &.blue {
+          background: map-get($primary, 500);
+          color: $white;
+          border: 1px solid map-get($primary, 500);
+
+          &:hover{
+            background: white;
+            color: map-get($primary, 500);
+          }
+        }
+
+        &.orange {
+          background: map-get($error, 500);
+          color: $white;
+          border: 1px solid map-get($error, 500);
+
+          &:hover {
+            background: $white;
+            color: map-get($error, 500);
+          }
+        }
+      }
+    }
+  }
+}

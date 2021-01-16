@@ -3,7 +3,8 @@ import PaymentActionTypes from './payment.types'
 const INITIAL_STATE = {
   data: undefined,
   currentItem: undefined,
-  error: ''
+  error: '',
+  paymentDetails: undefined
 }
 
 const paymentReducer = (state = INITIAL_STATE, action: any) => {
@@ -24,6 +25,12 @@ const paymentReducer = (state = INITIAL_STATE, action: any) => {
       return {
         ...state,
         error: action.payload
+      }
+
+    case PaymentActionTypes.SET_PAYMENT_DETAILS:
+      return {
+        ...state,
+        paymentDetails: action.payload
       }
 
     default:
