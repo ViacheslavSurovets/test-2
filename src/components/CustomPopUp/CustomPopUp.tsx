@@ -15,7 +15,9 @@ const CustomPopup:FC = (props) => {
     closeCustomPopUpAction && closeCustomPopUpAction()
   }
 
+  //@ts-ignore
   return (
+    //@ts-ignore
     <div className="custom-popup-container">
       <div className="custom-popup-container_padding">
         <div className="custom-popup-container__button-container">
